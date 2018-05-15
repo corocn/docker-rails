@@ -1,9 +1,5 @@
 version: '2'
 services:
-  db:
-    image: mysql:5.7
-    environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
   app:
     build: .
     command: bash -i -c 'rm -f tmp/pids/server.pid; bundle exec rails s -p 3000 -b 0.0.0.0'
@@ -11,5 +7,4 @@ services:
       - .:/app
     ports:
       - "3000:3000"
-    links:
-      - db
+    env_file: .env
