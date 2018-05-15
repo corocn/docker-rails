@@ -1,0 +1,18 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+      {
+        "name": "docker_rails",
+        "image": "778032334423.dkr.ecr.ap-northeast-1.amazonaws.com/corocn-docker-rails:latest",
+        "essential": true,
+        "portMappings": [
+          {
+            "hostPort": 80,
+            "containerPort": 3000
+          }
+        ],
+        "memory": 256
+      }
+    ]
+  }
+  
